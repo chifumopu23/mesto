@@ -7,3 +7,13 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 
+@import url(../blocks/user/user.css);
+@import url(../blocks/user/__wrapper/user__wrapper.css);
+@import url(../blocks/user-avatar/user-avatar.css);
+@import url(../blocks/user-info/user-info.css);
+@import url(../blocks/user-info/__wrapper/user-info__wrapper.css);
+@import url(../blocks/user-info/__name/user-info__name.css);
+@import url(../blocks/user-info/__edit-btn/user-info__edit-btn.css);
+@import url(../blocks/user-info/__subtitle/user-info__subtitle.css);
+@import url(../blocks/user-add-btn/user-add-btn.css);
+
