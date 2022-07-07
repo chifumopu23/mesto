@@ -17,3 +17,10 @@
 @import url(../blocks/user-info/__subtitle/user-info__subtitle.css);
 @import url(../blocks/user-add-btn/user-add-btn.css);
 
+@import url(../blocks/places/places.css);
+@import url(../blocks/place-items/place-items.css);
+@import url(../blocks/place-item/place-item.css);
+@import url(../blocks/place-item/__image/place-item__image.css);
+@import url(../blocks/place-item/__wrapper/place-item__wrapper.css);
+@import url(../blocks/place-item/__title/place-item__title.css);
+@import url(../blocks/place-item/__like-btn/place-item__like-btn.css);
