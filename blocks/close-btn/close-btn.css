@@ -1,0 +1,11 @@
+.close-btn {
+  background: none;
+  border:none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  z-index: 2;
+}

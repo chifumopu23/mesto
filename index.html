@@ -2,8 +2,8 @@
 <html lang="ru">
   <head>
     <title>Mesto</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="pages/index.css" rel="stylesheet">
   </head>
   <body class="page">
@@ -18,7 +18,7 @@
             <div class="user-info">
               <div class="user-info__wrapper">
                 <h1 class="user-info__name">Жак-Ив Кусто</h1>
-                <button type="button" class="user-info__edit-btn">
+                <button type="button" class="edit-btn">
                   <img src="images/edit-btn.svg" alt="">
                 </button>
               </div>
@@ -35,7 +35,7 @@
               <img class="place-item__image" src="./images/karachaeva.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Карачаевск</h2>
-                <button class="place-item__like-btn">
+                <button class="like-btn">
                   <img src="./images/like-btn.svg" alt="">
                 </button>
               </div>
@@ -44,7 +44,7 @@
               <img class="place-item__image" src="./images/elbrus.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Гора Эльбрус</h2>
-                <button class="place-item__like-btn">
+                <button class="like-btn">
                   <img src="./images/like-btn.svg" alt="">
                 </button>
               </div>
@@ -53,7 +53,7 @@
               <img class="place-item__image" src="./images/dombay.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Домбай</h2>
-                <button class="place-item__like-btn">
+                <button class="like-btn">
                   <img src="./images/like-btn.svg" alt="">
                 </button>
               </div>
@@ -62,7 +62,7 @@
               <img class="place-item__image" src="./images/elbrus.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Гора Эльбрус</h2>
-                <button class="place-item__like-btn">
+                <button class="like-btn">
                   <img src="./images/like-btn.svg" alt="">
                 </button>
               </div>
@@ -71,7 +71,7 @@
               <img class="place-item__image" src="./images/dombay.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Домбай</h2>
-                <button class="place-item__like-btn">
+                <button class="like-btn">
                   <img src="./images/like-btn.svg" alt="">
                 </button>
               </div>
@@ -80,7 +80,7 @@
               <img class="place-item__image" src="./images/karachaeva.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Карачаево-Черкесия</h2>
-                <button class="place-item__like-btn">
+                <button class="like-btn">
                   <img src="./images/like-btn.svg" alt="">
                 </button>
               </div>
@@ -92,5 +92,19 @@
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
       </footer>
     </div>
+      <div class="popup">
+        <div class="popup__container">
+          <button class="close-btn">
+            <img src="./images/close-btn.svg" alt="">
+          </button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="user-edit" action="">
+            <input class="input-form input-name" type="text" name="name">
+            <input class="input-form input-subtitle" type="text" name="subtitle">
+          </form>
+          <button class="save-btn">Сохранить</button>
+        </div>
+      </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

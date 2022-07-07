@@ -13,9 +13,9 @@
 @import url(../blocks/user-info/user-info.css);
 @import url(../blocks/user-info/__wrapper/user-info__wrapper.css);
 @import url(../blocks/user-info/__name/user-info__name.css);
-@import url(../blocks/user-info/__edit-btn/user-info__edit-btn.css);
+@import url(../blocks/edit-btn/edit-btn.css);
 @import url(../blocks/user-info/__subtitle/user-info__subtitle.css);
-@import url(../blocks/user-add-btn/user-add-btn.css);
+@import url(../blocks/add-btn/add-btn.css);
 
 @import url(../blocks/places/places.css);
 @import url(../blocks/place-items/place-items.css);
@@ -23,7 +23,18 @@
 @import url(../blocks/place-item/__image/place-item__image.css);
 @import url(../blocks/place-item/__wrapper/place-item__wrapper.css);
 @import url(../blocks/place-item/__title/place-item__title.css);
-@import url(../blocks/place-item/__like-btn/place-item__like-btn.css);
+@import url(../blocks/like-btn/like-btn.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/close-btn/close-btn.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/user-edit/user-edit.css);
+@import url(../blocks/input-form/input-form.css);
+@import url(../blocks/input-name/input-name.css);
+@import url(../blocks/input-subtitle/input-subtitle.css);
+@import url(../blocks/save-btn/save-btn.css);
+@import url(../blocks/open-popup/open-popup.css);
