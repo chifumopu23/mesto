@@ -19,14 +19,12 @@
               <div class="user-info__wrapper">
                 <h1 class="user-info__name">Жак-Ив Кусто</h1>
                 <button type="button" class="edit-btn">
-                  <img src="images/edit-btn.svg" alt="">
                 </button>
               </div>
-              <p class="user-info__subtitle">Исследователь океана</p>
+              <p class="user-info__job">Исследователь океана</p>
             </div>
           </div>
-          <button class="user-add-btn">
-            <img src="images/add-btn.svg" alt="">
+          <button class="add-btn">
           </button>
         </section>
         <section class="places">
@@ -35,54 +33,42 @@
               <img class="place-item__image" src="./images/karachaeva.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Карачаевск</h2>
-                <button class="like-btn">
-                  <img src="./images/like-btn.svg" alt="">
-                </button>
+                <button class="like-btn"></button>
               </div>
             </li>
             <li class="place-item">
               <img class="place-item__image" src="./images/elbrus.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Гора Эльбрус</h2>
-                <button class="like-btn">
-                  <img src="./images/like-btn.svg" alt="">
-                </button>
+                <button class="like-btn"></button>
               </div>
             </li>
             <li class="place-item">
               <img class="place-item__image" src="./images/dombay.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Домбай</h2>
-                <button class="like-btn">
-                  <img src="./images/like-btn.svg" alt="">
-                </button>
+                <button class="like-btn"></button>
               </div>
             </li>
             <li class="place-item">
               <img class="place-item__image" src="./images/elbrus.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Гора Эльбрус</h2>
-                <button class="like-btn">
-                  <img src="./images/like-btn.svg" alt="">
-                </button>
+                <button class="like-btn"></button>
               </div>
             </li>
             <li class="place-item">
               <img class="place-item__image" src="./images/dombay.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Домбай</h2>
-                <button class="like-btn">
-                  <img src="./images/like-btn.svg" alt="">
-                </button>
+                <button class="like-btn"></button>
               </div>
             </li>
             <li class="place-item">
               <img class="place-item__image" src="./images/karachaeva.jpg" alt="">
               <div class="place-item__wrapper">
                 <h2 class="place-item__title">Карачаево-Черкесия</h2>
-                <button class="like-btn">
-                  <img src="./images/like-btn.svg" alt="">
-                </button>
+                <button class="like-btn"></button>
               </div>
             </li>
           </ul>
@@ -95,14 +81,15 @@
       <div class="popup">
         <div class="popup__container">
           <button class="close-btn">
-            <img src="./images/close-btn.svg" alt="">
           </button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="user-edit" action="">
-            <input class="input-form input-name" type="text" name="name">
-            <input class="input-form input-subtitle" type="text" name="subtitle">
+          <form class="user-form" action="">
+            <fieldset class="user-edit">
+              <input class="input-form input-name" type="text" name="name">
+              <input class="input-form input-job" type="text" name="job">
+            </fieldset>
+            <button class="save-btn" type="submit">Сохранить</button>
           </form>
-          <button class="save-btn">Сохранить</button>
         </div>
       </div>
     <script src="./scripts/script.js"></script>

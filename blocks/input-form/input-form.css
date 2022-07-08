@@ -10,3 +10,10 @@
   font-weight: 400;
 }
 
+@media (max-width: 580px) {
+  .input-form {
+    width: 238px;
+    height: 22px;
+    font-size: 14px;
+  }
+}

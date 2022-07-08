@@ -11,3 +11,11 @@
   transform: translate(-50%, -50%);
   z-index: 2;
 }
+
+@media (max-width: 580px) {
+  .popup__container {
+    width: 282px;
+    height: 322px;
+    padding: 25px 22px;
+  }
+}

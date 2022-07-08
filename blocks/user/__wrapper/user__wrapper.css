@@ -1,3 +1,11 @@
 .user__wrapper {
   display: flex;
 }
+
+@media (max-width: 618px) {
+  .user__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

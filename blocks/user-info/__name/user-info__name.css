@@ -4,3 +4,10 @@
   font-weight: 500;
   margin: 0;
 }
+
+@media (max-width: 618px) {
+  .user-info__name {
+    font-size: 27px;
+    line-height: 1.21;
+  }
+}
