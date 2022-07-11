@@ -5,3 +5,9 @@
   font-weight: 400;
   margin: 0;
 }
+
+@media (max-width: 566px) {
+  .footer__copyright {
+    font-size: 14px;
+  }
+}

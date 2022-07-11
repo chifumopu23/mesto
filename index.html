@@ -1,97 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Mesto</title>
-<meta charset="UTF-8">
+
+<head>
+  <title>Mesto</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="pages/index.css" rel="stylesheet">
-  </head>
-  <body class="page">
-    <div class="wrapper">
-      <header class="header">
-        <a href="#" class="header__logo"></a>
-      </header>
-      <main class="content">
-        <section class="user">
-          <div class="user__wrapper">
-            <div class="user-avatar"></div>
-            <div class="user-info">
-              <div class="user-info__wrapper">
-                <h1 class="user-info__name">Жак-Ив Кусто</h1>
-                <button type="button" class="edit-btn">
-                </button>
-              </div>
-              <p class="user-info__job">Исследователь океана</p>
+  <link href="pages/index.css" rel="stylesheet">
+</head>
+
+<body class="page">
+  <div class="page__wrapper">
+    <header class="header">
+      <div class="header__logo"></div>
+    </header>
+    <main class="content">
+      <section class="user">
+        <div class="user__wrapper">
+          <img src="./images/avatar.jpg" class="user__avatar" alt="иконка пользователя"></img>
+          <div class="user__info">
+            <div class="user__wrapper-name">
+              <h1 class="user__name">Жак-Ив Кусто</h1>
+              <button type="button" class="user__edit-btn" type="button" aria-label="Редактировать"></button>
             </div>
+            <p class="user__job">Исследователь океана</p>
           </div>
-          <button class="add-btn">
-          </button>
-        </section>
-        <section class="places">
-          <ul class="place-items">
-            <li class="place-item">
-              <img class="place-item__image" src="./images/karachaeva.jpg" alt="">
-              <div class="place-item__wrapper">
-                <h2 class="place-item__title">Карачаевск</h2>
-                <button class="like-btn"></button>
-              </div>
-            </li>
-            <li class="place-item">
-              <img class="place-item__image" src="./images/elbrus.jpg" alt="">
-              <div class="place-item__wrapper">
-                <h2 class="place-item__title">Гора Эльбрус</h2>
-                <button class="like-btn"></button>
-              </div>
-            </li>
-            <li class="place-item">
-              <img class="place-item__image" src="./images/dombay.jpg" alt="">
-              <div class="place-item__wrapper">
-                <h2 class="place-item__title">Домбай</h2>
-                <button class="like-btn"></button>
-              </div>
-            </li>
-            <li class="place-item">
-              <img class="place-item__image" src="./images/elbrus.jpg" alt="">
-              <div class="place-item__wrapper">
-                <h2 class="place-item__title">Гора Эльбрус</h2>
-                <button class="like-btn"></button>
-              </div>
-            </li>
-            <li class="place-item">
-              <img class="place-item__image" src="./images/dombay.jpg" alt="">
-              <div class="place-item__wrapper">
-                <h2 class="place-item__title">Домбай</h2>
-                <button class="like-btn"></button>
-              </div>
-            </li>
-            <li class="place-item">
-              <img class="place-item__image" src="./images/karachaeva.jpg" alt="">
-              <div class="place-item__wrapper">
-                <h2 class="place-item__title">Карачаево-Черкесия</h2>
-                <button class="like-btn"></button>
-              </div>
-            </li>
-          </ul>
-        </section>
-      </main>
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
-      </footer>
-    </div>
-      <div class="popup">
-        <div class="popup__container">
-          <button class="close-btn">
-          </button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="user-form">
-            <fieldset class="user-edit">
-              <input class="input-form input-name" type="text" name="name" placeholder="Жак-Ив Кусто">
-              <input class="input-form input-job" type="text" name="job" placeholder="Исследователь океана">
-            </fieldset>
-            <button class="save-btn" type="submit">Сохранить</button>
-          </form>
         </div>
-      </div>
-    <script src="./scripts/script.js"></script>
-  </body>
+        <button class="user__add-btn" type="button" aria-label="Добавить изображение"></button>
+      </section>
+      <section class="place">
+        <ul class="place__items">
+          <li class="place-item">
+            <img class="place-item__image" src="./images/karachaeva.jpg" alt="Старая церковь в горах">
+            <div class="place-item__wrapper">
+              <h2 class="place-item__title">Карачаевск</h2>
+              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="place-item">
+            <img class="place-item__image" src="./images/elbrus.jpg" alt="Горы на горизонте">
+            <div class="place-item__wrapper">
+              <h2 class="place-item__title">Гора Эльбрус</h2>
+              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="place-item">
+            <img class="place-item__image" src="./images/dombay.jpg" alt="Вершины гор">
+            <div class="place-item__wrapper">
+              <h2 class="place-item__title">Домбай</h2>
+              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="place-item">
+            <img class="place-item__image" src="./images/elbrus.jpg" alt="Горы на горизонте">
+            <div class="place-item__wrapper">
+              <h2 class="place-item__title">Гора Эльбрус</h2>
+              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="place-item">
+            <img class="place-item__image" src="./images/dombay.jpg" alt="Вершины гор">
+            <div class="place-item__wrapper">
+              <h2 class="place-item__title">Домбай</h2>
+              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="place-item">
+            <img class="place-item__image" src="./images/karachaeva.jpg" alt="Старая церковь в горах">
+            <div class="place-item__wrapper">
+              <h2 class="place-item__title">Карачаево-Черкесия</h2>
+              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+  </div>
+  <div class="popup">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form" name="popup">
+        <div class="popup__wrapper-input">
+          <input class="popup__input popup__input_type_name" type="text" name="name" value="Жак-Ив Кусто">
+          <input class="popup__input popup__input_type_job" type="text" name="job" value="Исследователь океана">
+        </div>
+        <button class="popup__save-btn" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
 </html>
