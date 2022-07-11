@@ -1,0 +1,10 @@
+.place {
+  margin-top: 50px;
+}
+
+@media (max-width: 566px) {
+  .place {
+    margin-top: 36px;
+  }
+}
+

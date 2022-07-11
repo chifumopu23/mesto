@@ -1,0 +1,36 @@
+.user__edit-btn {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: 1px solid #fff;
+  background-image: url(../../../images/edit-btn.svg);
+  background-size: 10px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 18px;
+  box-sizing: border-box;
+  transition: .3s ease-out;
+  padding: 0;
+}
+
+.user__edit-btn:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media (max-width: 618px) {
+  .user__edit-btn {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 566px) {
+  .user__edit-btn {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    background-size: 7.5px 7.5px;
+  }
+}
