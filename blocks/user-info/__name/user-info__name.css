@@ -3,6 +3,22 @@
   line-height: 1.14;
   font-weight: 500;
   margin: 0;
+  max-width: 450px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 880px) {
+  .user-info__name {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 566px) {
+  .user-info__name {
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 618px) {
