@@ -2,4 +2,11 @@
   margin: 0 auto;
   max-width: 880px;
   min-width: 320px;
+  padding: 0 19px;
+}
+
+@media (max-width: 566px) {
+  .page__wrapper {
+    padding: 0;
+  }
 }

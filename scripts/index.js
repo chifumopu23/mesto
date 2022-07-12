@@ -10,6 +10,8 @@ let jobInput = formElement.querySelector('.popup__input_type_job')
 
 function openPopup() {
   popup.classList.add('popup_opened')
+  nameInput.value = userName.textContent;
+  jobInput.value = userJob.textContent;
 }
 
 function closePopup() {
