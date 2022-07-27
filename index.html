@@ -10,10 +10,12 @@
 
 <body class="page">
   <div class="page__wrapper">
+
     <header class="header">
       <div class="header__logo"></div>
     </header>
     <main class="content">
+
       <section class="user">
         <div class="user__wrapper">
           <img src="./images/avatar.jpg" class="user__avatar" alt="иконка пользователя">
@@ -27,68 +29,63 @@
         </div>
         <button class="user__add-btn" type="button" aria-label="Добавить изображение"></button>
       </section>
+
       <section class="places">
         <ul class="places__items">
-          <li class="place-item">
-            <img class="place-item__image" src="./images/karachaeva.jpg" alt="Старая церковь в горах">
-            <div class="place-item__wrapper">
-              <h2 class="place-item__title">Карачаевск</h2>
-              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="place-item">
-            <img class="place-item__image" src="./images/elbrus.jpg" alt="Горы на горизонте">
-            <div class="place-item__wrapper">
-              <h2 class="place-item__title">Гора Эльбрус</h2>
-              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="place-item">
-            <img class="place-item__image" src="./images/dombay.jpg" alt="Вершины гор">
-            <div class="place-item__wrapper">
-              <h2 class="place-item__title">Домбай</h2>
-              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="place-item">
-            <img class="place-item__image" src="./images/elbrus.jpg" alt="Горы на горизонте">
-            <div class="place-item__wrapper">
-              <h2 class="place-item__title">Гора Эльбрус</h2>
-              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="place-item">
-            <img class="place-item__image" src="./images/dombay.jpg" alt="Вершины гор">
-            <div class="place-item__wrapper">
-              <h2 class="place-item__title">Домбай</h2>
-              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="place-item">
-            <img class="place-item__image" src="./images/karachaeva.jpg" alt="Старая церковь в горах">
-            <div class="place-item__wrapper">
-              <h2 class="place-item__title">Карачаево-Черкесия</h2>
-              <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
-            </div>
-          </li>
         </ul>
       </section>
+
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
+
+  <div class="popup popup_type_edit">
     <div class="popup__container">
       <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="popup">
+      <form class="popup__form popup__form_type_edit" name="popup-edit">
           <input class="popup__input popup__input_type_name" type="text" name="name" value="Жак-Ив Кусто">
           <input class="popup__input popup__input_type_job" type="text" name="job" value="Исследователь океана">
         <button class="popup__save-btn" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
     </div>
   </div>
+
+  <div class="popup popup_type_add">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form popup__form_type_add" name="popup-add">
+          <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="Название">
+          <input class="popup__input popup__input_type_link" type="text" name="link" placeholder="Ссылка на картинку">
+        <button class="popup__save-btn" type="submit" aria-label="Создать">Создать</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_viewer">
+    <div class="popup__wrapper">
+      <figure class="popup__figure">
+        <img class="popup__image" src="#" alt="#">
+        <figcaption class="popup__figcaption"></figcaption>
+      </figure>
+      <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+    </div>
+  </div>
+
+  <template id="template-item">
+    <li class="place-item">
+      <img class="place-item__image" src="#" alt="">
+      <div class="place-item__wrapper">
+        <h2 class="place-item__title"></h2>
+        <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+      </div>
+      <button class="place-item__delete-btn" type="button" aria-label="Нравится"></button>
+    </li>
+  </template>
+
   <script src="./scripts/index.js"></script>
 </body>
 </html>
