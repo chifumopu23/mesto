@@ -26,7 +26,6 @@ const initialCards = [
 ];
 
 const selectors = {
-  page: '.page',
   user: '.user',
   name: '.user__name',
   job: '.user__job',
@@ -35,7 +34,6 @@ const selectors = {
   addBtn: '.user__add-btn',
   likeBtn:  '.place-item__like-btn',
   deleteBtn: '.place-item__delete-btn',
-  popup: '.popup',
   popEdit: '.popup_type_edit',
   popAdd: '.popup_type_add',
   popViewer: '.popup_type_viewer',
@@ -53,17 +51,15 @@ const selectors = {
   imgTitle: '.place-item__title'
 }
 
-const page = document.querySelector(selectors.page);
 const user = document.querySelector(selectors.user);
 const userName = user.querySelector(selectors.name);
 const userJob = user.querySelector(selectors.job);
 const editButton = user.querySelector(selectors.editBtn);
 const addButton = user.querySelector(selectors.addBtn);
-const popup = document.querySelector(selectors.popup);
 const popupEdit = document.querySelector(selectors.popEdit);
 const popupAdd = document.querySelector(selectors.popAdd);
 const popupViewer = document.querySelector(selectors.popViewer);
-const closeButton = document.querySelectorAll(selectors.closeBtn);
+const closeButtons = document.querySelectorAll(selectors.closeBtn);
 const formEdit = document.querySelector(selectors.editForm);
 const formAdd = document.querySelector(selectors.addForm);
 const nameInput = formEdit.querySelector(selectors.inputName);
@@ -118,7 +114,7 @@ function createCard(name, link) {
   cardLikeButton.addEventListener('click', likeActive)
 
 // событие при клике на кнопку изображении
-  cardImage.addEventListener('click', openViewer)
+  cardImage.addEventListener('click', () => handleCardClick(name, link));
 
   cardTitle.textContent = name;
   cardImage.src = link;
@@ -139,41 +135,38 @@ function createDefaultItems() {
 
 createDefaultItems();
 
-// функция отчистки инпутов
-function cleanInputValue() {
-  titleInput.value = '';
-  linkInput.value = '';
-}
-
 // функция передающая значения инпутов окна создания новой карточки
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
   createItem(titleInput.value, linkInput.value);
-  cleanInputValue()
+  evt.target.reset()
   closePopup(popupAdd);
 }
 
 // функция изменяющая кнопку лайка на активный
 function likeActive(like) {
   const target = like.target;
-  if (target.classList.contains('place-item__like-btn')){
     target.classList.toggle('place-item__like-btn_active');
-  }
+}
+
+function handleCardClick(name, link) {
+  popupImage.src = link;
+  popupImage.alt = name;
+  popupFigcaption.textContent = name;
+  openPopup(popupViewer)
 }
 
 // функция открытия изображения
-function openViewer(evt) {
+/* function openViewer(evt) {
   const target = evt.target;
-  if (target.classList.contains('place-item__image')) {
-    popupImage.src = target.src;
-    popupImage.alt = target.alt;
-    popupFigcaption.textContent = target.alt;
-    openPopup(popupViewer);
-  }
-}
+  popupImage.src = target.src;
+  popupImage.alt = target.alt;
+  popupFigcaption.textContent = target.alt;
+  openPopup(popupViewer);
+} */
 
 // событие при клике на кнопку закрытия
-closeButton.forEach((button) => {
+closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
