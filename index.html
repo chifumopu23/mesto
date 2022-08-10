@@ -1,91 +1,177 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <title>Mesto</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="pages/index.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <title>Mesto</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="pages/index.css" rel="stylesheet">
-</head>
-
-<body class="page">
-  <div class="page__wrapper">
-
-    <header class="header">
-      <div class="header__logo"></div>
-    </header>
-    <main class="content">
-
-      <section class="user">
-        <div class="user__wrapper">
-          <img src="./images/avatar.jpg" class="user__avatar" alt="иконка пользователя">
-          <div class="user__info">
-            <div class="user__wrapper-name">
-              <h1 class="user__name">Жак-Ив Кусто</h1>
-              <button type="button" class="user__edit-btn" aria-label="Редактировать"></button>
+  <body class="page">
+    <div class="page__wrapper">
+      <header class="header">
+        <div class="header__logo"></div>
+      </header>
+      <main class="content">
+        <section class="user">
+          <div class="user__wrapper">
+            <img
+              src="./images/avatar.jpg"
+              class="user__avatar"
+              alt="иконка пользователя"
+            />
+            <div class="user__info">
+              <div class="user__wrapper-name">
+                <h1 class="user__name">Жак-Ив Кусто</h1>
+                <button
+                  type="button"
+                  class="user__edit-btn"
+                  aria-label="Редактировать"
+                ></button>
+              </div>
+              <p class="user__job">Исследователь океана</p>
             </div>
-            <p class="user__job">Исследователь океана</p>
           </div>
-        </div>
-        <button class="user__add-btn" type="button" aria-label="Добавить изображение"></button>
-      </section>
+          <button
+            class="user__add-btn"
+            type="button"
+            aria-label="Добавить изображение"
+          ></button>
+        </section>
 
-      <section class="places">
-        <ul class="places__items">
-        </ul>
-      </section>
-
-    </main>
-    <footer class="footer">
-      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
-    </footer>
-  </div>
-
-  <div class="popup popup_type_edit">
-    <div class="popup__container">
-      <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form popup__form_type_edit" name="popup-edit">
-          <input class="popup__input popup__input_type_name" type="text" name="name" value="Жак-Ив Кусто">
-          <input class="popup__input popup__input_type_job" type="text" name="job" value="Исследователь океана">
-        <button class="popup__save-btn" type="submit" aria-label="Сохранить">Сохранить</button>
-      </form>
+        <section class="places">
+          <ul class="places__items"></ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+      </footer>
     </div>
-  </div>
 
-  <div class="popup popup_type_add">
-    <div class="popup__container">
-      <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
-      <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form popup__form_type_add" name="popup-add">
-          <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="Название">
-          <input class="popup__input popup__input_type_link" type="text" name="link" placeholder="Ссылка на картинку">
-        <button class="popup__save-btn" type="submit" aria-label="Создать">Создать</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="popup popup_type_viewer">
-    <div class="popup__wrapper">
-      <figure class="popup__figure">
-        <img class="popup__image" src="#" alt="#">
-        <figcaption class="popup__figcaption"></figcaption>
-      </figure>
-      <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
-    </div>
-  </div>
-
-  <template id="template-item">
-    <li class="place-item">
-      <img class="place-item__image" src="#" alt="">
-      <div class="place-item__wrapper">
-        <h2 class="place-item__title"></h2>
-        <button class="place-item__like-btn" type="button" aria-label="Нравится"></button>
+    <div class="popup popup_type_edit">
+      <div class="popup__container">
+        <button
+          class="popup__close-btn"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form
+          class="popup__form popup__form_type_edit"
+          name="popup-edit"
+          novalidate
+        >
+          <input
+            class="popup__input popup__input_type_name"
+            type="text"
+            name="name"
+            value="Жак-Ив Кусто"
+            required
+            minlength="2"
+            maxlength="40"
+            id="name"
+          />
+          <span class="popup__input-error" id="name-error"></span>
+          <input
+            class="popup__input popup__input_type_job"
+            type="text"
+            name="job"
+            value="Исследователь океана"
+            required
+            minlength="2"
+            maxlength="200"
+            id="job"
+          />
+          <span class="popup__input-error" id="job-error"></span>
+          <button
+            class="popup__button popup__save-btn"
+            type="submit"
+            aria-label="Сохранить"
+          >
+            Сохранить
+          </button>
+        </form>
       </div>
-      <button class="place-item__delete-btn" type="button" aria-label="Нравится"></button>
-    </li>
-  </template>
+    </div>
 
-  <script src="./scripts/index.js"></script>
-</body>
+    <div class="popup popup_type_add">
+      <div class="popup__container">
+        <button
+          class="popup__close-btn"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form
+          class="popup__form popup__form_type_add"
+          name="popup-add"
+          novalidate
+        >
+          <input
+            class="popup__input popup__input_type_title"
+            type="text"
+            name="title"
+            placeholder="Название"
+            id="title"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <span class="popup__input-error" id="title-error"></span>
+          <input
+            class="popup__input popup__input_type_link"
+            type="url"
+            name="link"
+            placeholder="Ссылка на картинку"
+            id="link"
+            required
+          />
+          <span class="popup__input-error" id="link-error"></span>
+          <button
+            class="popup__button popup__save-btn"
+            type="submit"
+            aria-label="Создать"
+          >
+            Создать
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_viewer">
+      <div class="popup__wrapper">
+        <figure class="popup__figure">
+          <img class="popup__image" src="#" alt="#" />
+          <figcaption class="popup__figcaption"></figcaption>
+        </figure>
+        <button
+          class="popup__close-btn"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+      </div>
+    </div>
+
+    <template id="template-item">
+      <li class="place-item">
+        <img class="place-item__image" src="#" alt="" />
+        <div class="place-item__wrapper">
+          <h2 class="place-item__title"></h2>
+          <button
+            class="place-item__like-btn"
+            type="button"
+            aria-label="Нравится"
+          ></button>
+        </div>
+        <button
+          class="place-item__delete-btn"
+          type="button"
+          aria-label="Нравится"
+        ></button>
+      </li>
+    </template>
+
+    <script defer src="./scripts/validate.js"></script>
+    <script defer src="./scripts/index.js"></script>
+  </body>
 </html>
