@@ -85,6 +85,15 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
+// функция закрытия при нажатии ESC
+function closePopupEsc(e) {
+  if (e.key === 'Escape') {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach((popup) => {
+      closePopup(popup);
+    });
+  }
+}
 // функция заполняющая инпуты окна редактирования профиля
 function setPopupInputValue() {
   nameInput.value = userName.textContent;
@@ -162,6 +171,10 @@ function handleCardClick(name, link) {
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
+});
+
+document.addEventListener('keydown', function (e) {
+  closePopupEsc(e);
 });
 
 // событие при клике на кнопку редактирования
