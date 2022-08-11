@@ -36,10 +36,6 @@ const setEventListener = (
   const inputList = formElement.querySelectorAll(inputSelector);
   const submitButton = formElement.querySelector(submitButtonSelector);
 
-  formElement.addEventListener('submit', (e) => {
-    e.preventDefault();
-  });
-
   [...inputList].forEach((input) => {
     input.addEventListener('input', (e) => {
       checkInputValidity(input, formElement, inputErrorClass);

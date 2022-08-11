@@ -54,12 +54,12 @@ const selectors = {
 const user = document.querySelector(selectors.user);
 const userName = user.querySelector(selectors.name);
 const userJob = user.querySelector(selectors.job);
-const editButton = user.querySelector(selectors.editBtn);
-const addButton = user.querySelector(selectors.addBtn);
+const buttonEdit = user.querySelector(selectors.editBtn);
+const buttonAdd = user.querySelector(selectors.addBtn);
 const popupEdit = document.querySelector(selectors.popEdit);
 const popupAdd = document.querySelector(selectors.popAdd);
 const popupViewer = document.querySelector(selectors.popViewer);
-const closeButtons = document.querySelectorAll(selectors.closeBtn);
+const buttonsClose = document.querySelectorAll(selectors.closeBtn);
 const formEdit = document.querySelector(selectors.editForm);
 const formAdd = document.querySelector(selectors.addForm);
 const nameInput = formEdit.querySelector(selectors.inputName);
@@ -78,11 +78,17 @@ const popupFigcaption = popupViewer.querySelector(selectors.popFigcaption);
 // функция открытия попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', function (e) {
+    closePopupEsc(e);
+  });
 }
 
 // функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', function (e) {
+    closePopupEsc(e);
+  });
 }
 
 // функция закрытия при нажатии ESC
@@ -154,7 +160,12 @@ function createDefaultItems() {
     return createItem(item.name, item.link);
   });
 }
-
+// функция дективации кнопки
+function disabledButton() {
+  const buttonDisabled = formAdd.querySelector('.popup__save-btn');
+  buttonDisabled.classList.add('popup__button_disabled');
+  buttonDisabled.disabled = 'disabled';
+}
 createDefaultItems();
 
 // функция передающая значения инпутов окна создания новой карточки
@@ -179,13 +190,9 @@ function handleCardClick(name, link) {
 }
 
 // событие при клике на кнопку закрытия
-closeButtons.forEach((button) => {
+buttonsClose.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
-});
-
-document.addEventListener('keydown', function (e) {
-  closePopupEsc(e);
 });
 
 document.addEventListener('click', function (e) {
@@ -193,14 +200,15 @@ document.addEventListener('click', function (e) {
 });
 
 // событие при клике на кнопку редактирования
-editButton.addEventListener('click', function () {
+buttonEdit.addEventListener('click', function () {
   openPopup(popupEdit);
   setPopupInputValue();
 });
 
 // событие при клике на кнопку добавления новой карточки
-addButton.addEventListener('click', function () {
+buttonAdd.addEventListener('click', function () {
   openPopup(popupAdd);
+  disabledButton();
 });
 
 // событие при нажатии кнопки сохранить окна редактирования
