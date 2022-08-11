@@ -94,6 +94,17 @@ function closePopupEsc(e) {
     });
   }
 }
+
+//функция закрытия при клике на оверлей
+function closePopupOverlay(e) {
+  if (e.target.classList.contains('popup')) {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach((popup) => {
+      closePopup(popup);
+    });
+  }
+}
+
 // функция заполняющая инпуты окна редактирования профиля
 function setPopupInputValue() {
   nameInput.value = userName.textContent;
@@ -175,6 +186,10 @@ closeButtons.forEach((button) => {
 
 document.addEventListener('keydown', function (e) {
   closePopupEsc(e);
+});
+
+document.addEventListener('click', function (e) {
+  closePopupOverlay(e);
 });
 
 // событие при клике на кнопку редактирования
