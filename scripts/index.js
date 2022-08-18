@@ -49,6 +49,7 @@ const selectors = {
   places: '.places__items',
   img: '.place-item__image',
   imgTitle: '.place-item__title',
+  saveBtn: '.popup__save-btn',
 };
 
 const user = document.querySelector(selectors.user);
@@ -74,6 +75,7 @@ const imageItem = places.querySelector(selectors.img);
 const likeButton = template.querySelector(selectors.likeBtn);
 const popupImage = popupViewer.querySelector(selectors.popImage);
 const popupFigcaption = popupViewer.querySelector(selectors.popFigcaption);
+const buttonSave = formAdd.querySelector(selectors.saveBtn);
 
 // функция открытия попапа
 function openPopup(popup) {
@@ -160,12 +162,7 @@ function createDefaultItems() {
     return createItem(item.name, item.link);
   });
 }
-// функция дективации кнопки
-function disabledButton() {
-  const buttonDisabled = formAdd.querySelector('.popup__save-btn');
-  buttonDisabled.classList.add('popup__button_disabled');
-  buttonDisabled.disabled = 'disabled';
-}
+
 createDefaultItems();
 
 // функция передающая значения инпутов окна создания новой карточки
@@ -202,13 +199,14 @@ document.addEventListener('click', function (e) {
 // событие при клике на кнопку редактирования
 buttonEdit.addEventListener('click', function () {
   openPopup(popupEdit);
-  setPopupInputValue();
+  setPopupInputValue(button, configValidate);
 });
 
 // событие при клике на кнопку добавления новой карточки
 buttonAdd.addEventListener('click', function () {
   openPopup(popupAdd);
-  disabledButton();
+  disabledButton(buttonSave, configValidate.inactiveButtonClass);
+  // toggleButtonState(buttonSave, true, configValidate.inactiveButtonClass);
 });
 
 // событие при нажатии кнопки сохранить окна редактирования
@@ -216,3 +214,5 @@ formEdit.addEventListener('submit', handleProfileFormSubmit);
 
 // событие при нажатии кнопки создать окна добавления карточки
 formAdd.addEventListener('submit', handleAddCardFormSubmit);
+
+console.log(configValidate.inactiveButtonClass);
