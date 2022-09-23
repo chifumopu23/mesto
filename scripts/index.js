@@ -114,7 +114,7 @@ function closePopupOverlay(e) {
 }
 
 // функция заполняющая инпуты окна редактирования профиля
-function setPopupInputValue() {
+function setProfileInputValue() {
   nameInput.value = userName.textContent;
   jobInput.value = userJob.textContent;
 }
@@ -199,14 +199,13 @@ document.addEventListener('click', function (e) {
 // событие при клике на кнопку редактирования
 buttonEdit.addEventListener('click', function () {
   openPopup(popupEdit);
-  setPopupInputValue(button, configValidate);
+  setProfileInputValue();
 });
 
 // событие при клике на кнопку добавления новой карточки
 buttonAdd.addEventListener('click', function () {
   openPopup(popupAdd);
   disabledButton(buttonSave, configValidate.inactiveButtonClass);
-  // toggleButtonState(buttonSave, true, configValidate.inactiveButtonClass);
 });
 
 // событие при нажатии кнопки сохранить окна редактирования
@@ -214,5 +213,3 @@ formEdit.addEventListener('submit', handleProfileFormSubmit);
 
 // событие при нажатии кнопки создать окна добавления карточки
 formAdd.addEventListener('submit', handleAddCardFormSubmit);
-
-console.log(configValidate.inactiveButtonClass);

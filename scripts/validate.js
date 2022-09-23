@@ -54,8 +54,6 @@ const setEventListener = (formElement, configValidate) => {
 
   [...inputList].forEach((input) => {
     input.addEventListener('input', (e) => {
-      console.log('gdgdgdgdg');
-
       checkInputValidity(input, formElement, configValidate.inputErrorClass);
       toggleButtonState(
         submitButton,
