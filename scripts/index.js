@@ -80,17 +80,13 @@ const buttonSave = formAdd.querySelector(selectors.saveBtn);
 // функция открытия попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', function (e) {
-    closePopupEsc(e);
-  });
+  document.addEventListener('keydown', closePopupEsc);
 }
 
 // функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', function (e) {
-    closePopupEsc(e);
-  });
+  document.removeEventListener('keydown', closePopupEsc);
 }
 
 // функция закрытия при нажатии ESC
